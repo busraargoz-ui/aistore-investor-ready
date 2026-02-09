@@ -753,5 +753,26 @@ html[lang="tr"] .hero-title{
   }
 
 }
+@media (max-width: 768px){
+  .hero{
+    grid-template-columns: 1fr; /* tek kolon */
+    gap:18px;
+    padding:22px 0 14px;
+  }
+
+  .hero-title{
+    font-size: clamp(34px, 8vw, 46px);
+    line-height:1.05;
+  }
+
+  html[lang="tr"] .hero-title{
+    font-size: clamp(32px, 8vw, 44px);
+  }
+
+  .hero-sub{
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+}
 
 
