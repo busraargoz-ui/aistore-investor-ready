@@ -4,20 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AIStore — Upload</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="/styles.css?v=20" />
 </head>
 
 <body>
   <div class="page">
     <header class="topbar">
       <div class="topbarInner">
-        <a class="brand" href="../index.html">
+        <a class="brand" href="/index.html">
           <span class="lambda">Λ</span><span class="brandText">ISTORE</span>
         </a>
 
         <nav class="topnav topnav--pill">
-          <a class="navLink" href="celebrity.html" data-i18n="nav.celebrity">Celebrity AIs</a>
-          <a class="navLink" href="upload-ai.html" data-i18n="nav.upload">Upload</a>
+          <a class="navLink" href="/assets/celebrity.html" data-i18n="nav.celebrity">Celebrity AIs</a>
+          <a class="navLink" href="/assets/upload-ai.html" data-i18n="nav.upload">Upload</a>
+          <a class="navLink" href="/pricing.html">Pricing</a>
 
           <div class="langMenu" id="langMenu">
             <button class="langBtnMini" type="button" aria-haspopup="listbox" aria-expanded="false">
@@ -39,7 +40,7 @@
         <span data-i18n="upload.title">Upload Your</span> <span class="lambda">Λ</span><span data-i18n="cat.ai">I</span>
       </h1>
 
-      <p style="margin:10px 0 0; color: rgba(234,243,255,.8); line-height:1.6; max-width: 760px;"
+      <p style="margin:10px 0 0; color: rgba(234,243,255,.82); line-height:1.6; max-width: 760px;"
          data-i18n="upload.sub">
         MVP page: share a few details. Later we’ll add pricing, versions, reviews, and publishing.
       </p>
@@ -47,17 +48,19 @@
       <div style="margin-top:22px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:22px; padding:22px; max-width: 820px;">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
           <div>
-            <label style="display:block; font-weight:800; margin-bottom:8px;" data-i18n="upload.ai_name">AI Name</label>
-            <input id="aiName" placeholder="e.g., Finance ΛI" style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.18); color:#fff;">
+            <label style="display:block; font-weight:900; margin-bottom:8px;" data-i18n="upload.ai_name">AI Name</label>
+            <input id="aiName" placeholder="e.g., Finance ΛI"
+              style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.18); color:#fff;">
           </div>
 
           <div>
-            <label style="display:block; font-weight:800; margin-bottom:8px;" data-i18n="upload.category">Category</label>
-            <input id="aiCategory" placeholder="e.g., Finance" style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.18); color:#fff;">
+            <label style="display:block; font-weight:900; margin-bottom:8px;" data-i18n="upload.category">Category</label>
+            <input id="aiCategory" placeholder="e.g., Finance"
+              style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.18); color:#fff;">
           </div>
 
           <div style="grid-column: 1 / -1;">
-            <label style="display:block; font-weight:800; margin-bottom:8px;" data-i18n="upload.desc">Short Description</label>
+            <label style="display:block; font-weight:900; margin-bottom:8px;" data-i18n="upload.desc">Short Description</label>
             <textarea id="aiDesc" rows="4" placeholder="What does your AI do?"
               style="width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.18); color:#fff;"></textarea>
           </div>
@@ -65,14 +68,13 @@
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
           <button class="cta primary" type="button" id="submitMvp" style="min-width:200px;" data-i18n="upload.submit">Submit (MVP)</button>
-          <a class="cta secondary" href="../index.html" style="min-width:200px;" data-i18n="upload.back">Back to Home</a>
+          <a class="cta secondary" href="/index.html" style="min-width:200px;" data-i18n="upload.back">Back to Home</a>
         </div>
       </div>
 
-      
-      <!-- ✅ Investor Demo: 2 ready personas -->
+      <!-- Investor Demo Personas -->
       <div style="max-width:820px; margin:22px 0 0; padding:16px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px;">
-        <div style="font-weight:800; margin-bottom:10px;" data-i18n="demo.quick_title">Investor Demo Personas</div>
+        <div style="font-weight:900; margin-bottom:10px;" data-i18n="demo.quick_title">Investor Demo Personas</div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <button type="button" class="cta secondary" id="personaFamily" style="min-width:240px;" data-i18n="demo.persona_family">Life & Family • Psychologist</button>
           <button type="button" class="cta secondary" id="personaFinance" style="min-width:240px;" data-i18n="demo.persona_finance">Finance • Advisor</button>
@@ -85,7 +87,7 @@
         </div>
       </div>
 
-<!-- ✅ SINGLE WORKING CHAT (no duplicate ids) -->
+      <!-- Single working chat -->
       <div style="max-width:820px; margin:22px 0 0; padding:18px; background:#ffffff; border-radius:18px;">
         <h2 style="margin:0 0 10px 0; color:#111;">Expert AI Demo</h2>
 
@@ -95,7 +97,7 @@
 
         <div style="display:flex; gap:10px; margin-top:10px;">
           <input id="expertMsg" placeholder="Type your question..." style="flex:1; padding:12px; border-radius:12px; border:1px solid #d0d0d0;">
-          <button id="expertSend" onclick="sendExpert()" style="padding:12px 14px; border-radius:12px; border:1px solid #d0d0d0; cursor:pointer;">
+          <button id="expertSend" type="button" style="padding:12px 14px; border-radius:12px; border:1px solid #d0d0d0; cursor:pointer;">
             Gönder
           </button>
         </div>
@@ -108,123 +110,159 @@
       <div class="container footerInner">
         <div class="footerBrand"><span class="lambda">Λ</span>ISTORE</div>
         <div class="footerLinks">
-          <a href="upload-ai.html" data-i18n="footer.upload">Upload</a>
-          <a href="celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
+          <a href="/assets/upload-ai.html" data-i18n="footer.upload">Upload</a>
+          <a href="/assets/celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
           <a href="#" data-i18n="footer.terms">Terms</a>
           <a href="#" data-i18n="footer.privacy">Privacy</a>
+          <a href="/pricing.html">Pricing</a>
         </div>
       </div>
     </footer>
   </div>
 
   <script>
-    (function(){
-      const DICT = {
-        en: {
-          "nav.celebrity":"Celebrity AIs","nav.upload":"Upload",
-          "cat.ai":"I",
-          "upload.title":"Upload Your","upload.sub":"MVP page: share a few details. Later we’ll add pricing, versions, reviews, and publishing.",
-          "upload.ai_name":"AI Name","upload.category":"Category","upload.desc":"Short Description",
-          "upload.submit":"Submit (MVP)","upload.back":"Back to Home",
-          "footer.upload":"Upload","footer.celebrity":"Celebrity AIs","footer.terms":"Terms","demo.quick_title":"Investor Demo Personas","demo.persona_family":"Life & Family • Psychologist","demo.persona_finance":"Finance • Advisor","demo.selected":"Selected expert:","demo.none":"None yet","demo.tip":"Tip: Click a persona (recommended) or fill the form and press “Submit (MVP)” to use your own expert profile in the live demo below.","demo.send":"Send","footer.privacy":"Privacy"
-        },
-        tr: {
-          "nav.celebrity":"Celebrity AI’lar","nav.upload":"Yükle",
-          "cat.ai":"I",
-          "upload.title":"AI’ını Yükle","upload.sub":"MVP sayfası: birkaç bilgi paylaş. Sonra fiyatlama, versiyonlar, değerlendirmeler ve yayınlama eklenecek.",
-          "upload.ai_name":"AI Adı","upload.category":"Kategori","upload.desc":"Kısa Açıklama",
-          "upload.submit":"Gönder (MVP)","upload.back":"Ana sayfaya dön",
-          "footer.upload":"Yükle","footer.celebrity":"Celebrity AI’lar","footer.terms":"Koşullar","demo.quick_title":"Yatırımcı Demo Personaları","demo.persona_family":"Life & Family • Psikolog","demo.persona_finance":"Finance • Danışman","demo.selected":"Seçili uzman:","demo.none":"Henüz seçilmedi","demo.tip":"İpucu: Bir persona seç (önerilir) veya formu doldurup “Submit (MVP)” butonuna bas — aşağıdaki canlı demoda kendi uzman profilinle cevap alırsın.","demo.send":"Gönder","footer.privacy":"Gizlilik"
-        }
-      };
-
-      function getLang(){
-        const p = new URLSearchParams(location.search);
-        const l = (p.get("lang")||"").toLowerCase();
-        if (l==="tr"||l==="en") return l;
-        try{
-          const s=(localStorage.getItem("aistore_lang")||"").toLowerCase();
-          if (s==="tr"||s==="en") return s;
-        }catch(e){}
-        return "en";
+  (function(){
+    // ---------------- i18n ----------------
+    const DICT = {
+      en: {
+        "nav.celebrity":"Celebrity AIs","nav.upload":"Upload",
+        "cat.ai":"I",
+        "upload.title":"Upload Your","upload.sub":"MVP page: share a few details. Later we’ll add pricing, versions, reviews, and publishing.",
+        "upload.ai_name":"AI Name","upload.category":"Category","upload.desc":"Short Description",
+        "upload.submit":"Submit (MVP)","upload.back":"Back to Home",
+        "demo.quick_title":"Investor Demo Personas",
+        "demo.persona_family":"Life & Family • Psychologist",
+        "demo.persona_finance":"Finance • Advisor",
+        "demo.selected":"Selected expert:",
+        "demo.none":"None yet",
+        "demo.tip":"Tip: Click a persona (recommended) or fill the form and press “Submit (MVP)” to use your own expert profile in the live demo below.",
+        "footer.upload":"Upload","footer.celebrity":"Celebrity AIs","footer.terms":"Terms","footer.privacy":"Privacy"
+      },
+      tr: {
+        "nav.celebrity":"Celebrity AI’lar","nav.upload":"Yükle",
+        "cat.ai":"I",
+        "upload.title":"AI’ını Yükle","upload.sub":"MVP sayfası: birkaç bilgi paylaş. Sonra fiyatlama, versiyonlar, değerlendirmeler ve yayınlama eklenecek.",
+        "upload.ai_name":"AI Adı","upload.category":"Kategori","upload.desc":"Kısa Açıklama",
+        "upload.submit":"Gönder (MVP)","upload.back":"Ana sayfaya dön",
+        "demo.quick_title":"Yatırımcı Demo Personaları",
+        "demo.persona_family":"Life & Family • Psikolog",
+        "demo.persona_finance":"Finance • Danışman",
+        "demo.selected":"Seçili uzman:",
+        "demo.none":"Henüz seçilmedi",
+        "demo.tip":"İpucu: Bir persona seç (önerilir) veya formu doldurup “Gönder (MVP)” butonuna bas — aşağıdaki canlı demoda kendi uzman profilinle cevap alırsın.",
+        "footer.upload":"Yükle","footer.celebrity":"Celebrity AI’lar","footer.terms":"Koşullar","footer.privacy":"Gizlilik"
       }
+    };
 
-      function setLang(lang){
-        lang = (lang==="tr") ? "tr":"en";
-        document.documentElement.lang = lang;
-        document.querySelectorAll("[data-i18n]").forEach(el=>{
-          const key=el.getAttribute("data-i18n");
-          const val=DICT[lang][key];
-          if (val) el.textContent = val;
-        });
+    function readLang(){
+      const p = new URLSearchParams(location.search);
+      const urlLang = (p.get("lang") || "").toLowerCase();
+      if (urlLang === "tr" || urlLang === "en") return urlLang;
+      try{
+        const saved = (localStorage.getItem("aistore_lang") || "").toLowerCase();
+        if (saved === "tr" || saved === "en") return saved;
+      }catch(e){}
+      return "en";
+    }
 
-        const langValue=document.getElementById("langValue");
-        if (langValue) langValue.textContent = (lang==="tr"?"TR":"EN");
-        document.querySelectorAll(".langOption").forEach(b=>b.classList.toggle("is-active", b.dataset.lang===lang));
+    function applyLang(lang){
+      lang = (lang === "tr") ? "tr" : "en";
+      document.documentElement.lang = lang;
 
-        try{ localStorage.setItem("aistore_lang", lang); }catch(e){}
-        const url=new URL(location.href); url.searchParams.set("lang", lang);
-        history.replaceState({}, "", url.toString());
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        const val = DICT?.[lang]?.[key];
+        if(!val) return;
+        el.textContent = val;
+      });
 
-        document.querySelectorAll('a[href]').forEach(a=>{
-          const href=a.getAttribute("href");
-          if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
-          const u=new URL(href, location.href);
-          u.searchParams.set("lang", lang);
-          const qs = u.searchParams.toString();
-          a.setAttribute("href", u.pathname + (qs ? "?" + qs : "") + u.hash);
-        });
-      }
+      const langValue = document.getElementById("langValue");
+      if (langValue) langValue.textContent = lang.toUpperCase();
 
-      const menu=document.getElementById("langMenu");
-      if(menu){
-        const btn=menu.querySelector(".langBtnMini");
-        const list=menu.querySelector(".langList");
-        function close(){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
-        btn.addEventListener("click",(e)=>{ e.stopPropagation(); const o=menu.classList.toggle("open"); btn.setAttribute("aria-expanded", o?"true":"false"); });
-        list.addEventListener("click",(e)=>{ const opt=e.target.closest(".langOption"); if(!opt) return; setLang(opt.dataset.lang); close(); });
-        document.addEventListener("click", close);
-        document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") close(); });
-      }
+      document.querySelectorAll(".langOption").forEach(b=>{
+        b.classList.toggle("is-active", b.dataset.lang === lang);
+      });
 
-      setLang(getLang());
-    })();
-// --- Investor Demo state ---
-let CURRENT_EXPERT = null;
-    function getLang(){
-      const url = new URL(window.location.href);
-      const q = (url.searchParams.get("lang") || "").toLowerCase();
-      if(q === "tr" || q === "en") return q;
-      // fallback to html lang
-      const hl = (document.documentElement.lang || "en").toLowerCase();
-      return (hl.startsWith("tr") ? "tr" : "en");
+      try{ localStorage.setItem("aistore_lang", lang); }catch(e){}
+
+      const url = new URL(location.href);
+      url.searchParams.set("lang", lang);
+      history.replaceState({}, "", url.toString());
+
+      // Add lang to internal links
+      document.querySelectorAll('a[href]').forEach(a=>{
+        const href = a.getAttribute("href");
+        if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
+        const u = new URL(href, location.href);
+        u.searchParams.set("lang", lang);
+        const qs = u.searchParams.toString();
+        a.setAttribute("href", u.pathname + (qs ? "?" + qs : "") + u.hash);
+      });
+    }
+
+    const menu = document.getElementById("langMenu");
+    if(menu){
+      const btn = menu.querySelector(".langBtnMini");
+      const list = menu.querySelector(".langList");
+      function close(){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
+      btn.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        const o = menu.classList.toggle("open");
+        btn.setAttribute("aria-expanded", o ? "true" : "false");
+      });
+      list.addEventListener("click",(e)=>{
+        const opt = e.target.closest(".langOption");
+        if(!opt) return;
+        applyLang(opt.dataset.lang);
+        close();
+      });
+      document.addEventListener("click", close);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") close(); });
+    }
+
+    // ---------------- Demo + API chat ----------------
+    let CURRENT_EXPERT = null;
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    function getLangForDemo(){
+      const l = (document.documentElement.lang || "en").toLowerCase();
+      return l.startsWith("tr") ? "tr" : "en";
     }
 
     function setSelectedExpert(expert){
       CURRENT_EXPERT = expert;
       const badge = document.getElementById("expertBadge");
       if(!badge) return;
-
-      const lang = getLang();
+      const lang = getLangForDemo();
       const label = (lang === "tr") ? "Seçili uzman:" : "Selected expert:";
-      badge.innerHTML = `<b>${label}</b> <b>${escapeHtml(expert.name)}</b> • ${escapeHtml(expert.category)}<br><span style="opacity:.85">${escapeHtml(expert.description || "")}</span>`;
+      badge.innerHTML =
+        `<b>${label}</b> <b>${escapeHtml(expert.name)}</b> • ${escapeHtml(expert.category)}<br>` +
+        `<span style="opacity:.85">${escapeHtml(expert.description || "")}</span>`;
     }
 
     function expertFromForm(){
       const name = (document.getElementById("aiName")?.value || "").trim();
       const category = (document.getElementById("aiCategory")?.value || "").trim();
       const desc = (document.getElementById("aiDesc")?.value || "").trim();
-
-      const lang = getLang();
+      const lang = getLangForDemo();
       return {
         name: name || (lang === "tr" ? "Kariyer Koçu ΛI" : "Career Coach ΛI"),
         category: category || (lang === "tr" ? "Kariyer" : "Career"),
-        description: desc || (lang === "tr" ? "Net hedefler, adım adım plan ve güçlü motivasyon." : "Clear goals, step-by-step plan, strong motivation.")
+        description: desc || (lang === "tr"
+          ? "Net hedefler, adım adım plan ve güçlü motivasyon."
+          : "Clear goals, step-by-step plan, strong motivation.")
       };
     }
 
     function initDemo(){
-      // Preset personas (2 personas as you requested)
       const family = {
         name: "Life & Family Psychologist ΛI",
         category: "Life & Family",
@@ -236,30 +274,28 @@ let CURRENT_EXPERT = null;
         description: "Practical budgeting, savings, and decision frameworks — with clear caveats."
       };
 
-      // Buttons
-      const b1 = document.getElementById("personaFamily");
-      const b2 = document.getElementById("personaFinance");
-      b1?.addEventListener("click", () => setSelectedExpert(family));
-      b2?.addEventListener("click", () => setSelectedExpert(finance));
+      document.getElementById("personaFamily")?.addEventListener("click", () => setSelectedExpert(family));
+      document.getElementById("personaFinance")?.addEventListener("click", () => setSelectedExpert(finance));
 
-      // Submit (MVP) uses the form as the expert profile
       document.getElementById("submitMvp")?.addEventListener("click", () => {
         setSelectedExpert(expertFromForm());
-        // smooth scroll to chat
         document.getElementById("expertChatBox")?.scrollIntoView({behavior:"smooth", block:"start"});
       });
 
-      // Default: pick family persona for a strong first impression
+      // Default persona
       setSelectedExpert(family);
 
-      // Enter to send
       const input = document.getElementById("expertMsg");
-      input?.addEventListener("keydown", (e) => {
+      const sendBtn = document.getElementById("expertSend");
+
+      input?.addEventListener("keydown", (e)=>{
         if(e.key === "Enter"){
           e.preventDefault();
           sendExpert();
         }
       });
+
+      sendBtn?.addEventListener("click", sendExpert);
     }
 
     async function sendExpert(){
@@ -268,17 +304,18 @@ let CURRENT_EXPERT = null;
       const status = document.getElementById("expertStatus");
       const btn = document.getElementById("expertSend");
 
-      const text = (input.value || "").trim();
+      const text = (input?.value || "").trim();
       if(!text) return;
 
-      const lang = getLang();
+      const lang = getLangForDemo();
       const youLabel = (lang === "tr") ? "Sen" : "You";
+
       box.innerHTML += `<div style="margin:8px 0; text-align:right;"><b>${youLabel}:</b> ${escapeHtml(text)}</div>`;
       input.value = "";
+
       status.textContent = (lang === "tr") ? "Cevap hazırlanıyor..." : "Generating answer...";
       btn.disabled = true;
 
-      // Ensure expert exists
       if(!CURRENT_EXPERT) CURRENT_EXPERT = expertFromForm();
 
       try{
@@ -287,7 +324,7 @@ let CURRENT_EXPERT = null;
           headers:{"Content-Type":"application/json"},
           body: JSON.stringify({ message: text, expert: CURRENT_EXPERT, lang })
         });
-        const data = await res.json();
+        const data = await res.json().catch(()=> ({}));
         if(!res.ok) throw new Error(data.error || "API error");
 
         box.innerHTML += `<div style="margin:8px 0;"><b>AI:</b> ${escapeHtml(data.answer || "")}</div>`;
@@ -300,31 +337,12 @@ let CURRENT_EXPERT = null;
       }
     }
 
+    // boot
+    const initialLang = readLang();
+    applyLang(initialLang);
+
     document.addEventListener("DOMContentLoaded", initDemo);
-    function escapeHtml(str){
-      return String(str)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
+  })();
   </script>
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-  if (btn1) {
-    btn1.addEventListener("click", function() {
-      selected.textContent = "Life & Family • Psychologist";
-    });
-  }
-
-  if (btn2) {
-    btn2.addEventListener("click", function() {
-      selected.textContent = "Finance • Advisor";
-    });
-  }
-});
-</script>
 </body>
 </html>
