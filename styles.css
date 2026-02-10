@@ -140,12 +140,13 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Laptop (CLEAN - single source of truth) */
-.hero-right{display:flex;justify-content:center;align-items:center}
+/* Laptop */
+.hero-right{display:flex;justify-content:center}
 
 .laptopWrap{
   position:relative;
-  width:min(740px, 44vw);   /* laptop biraz küçülsün */
-  max-width:740px;
+  width:min(760px, 44vw);   /* 820px çok büyütüyordu */
+  max-width:760px;
   filter:drop-shadow(0 40px 80px rgba(56,189,248,.22));
   transform:perspective(1000px) rotateY(4deg);
   transition:transform .6s ease;
@@ -153,18 +154,19 @@ a{color:inherit;text-decoration:none}
 .laptopWrap:hover{transform:perspective(1000px) rotateY(0deg) scale(1.01)}
 .laptopImg{width:100%;height:auto;display:block}
 
+/* EKRANI LAPTOP’IN İÇİNE OTURTAN AYAR (daha doğru inset) */
 .laptopScreen{
   position:absolute;
-  left: 9.6%;
-  right: 9.6%;
-  top: 12.2%;
-  bottom: 23.2%;
+  left: 14%;
+  right: 14%;
+  top: 8.2%;
+  bottom: 19.8%;
   border-radius: 18px;
   overflow:hidden;
   background: rgba(10,14,28,.72);
   border: 1px solid rgba(255,255,255,.06);
   box-shadow: inset 0 0 70px rgba(0,0,0,.65);
-  padding: 10px;
+  padding: 12px;
 }
 
 /* inside-laptop grid */
@@ -361,6 +363,7 @@ a{color:inherit;text-decoration:none}
 .laptopScreen{
   inset: 9% 8% 19% 8%;
 }
+
 
 
 
