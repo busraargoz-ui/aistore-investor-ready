@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AIStore — AI Marketplace</title>
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <!-- Root-absolute: assets altındaki sayfalarda da bozulmasın -->
+  <link rel="stylesheet" href="/styles.css?v=20" />
 </head>
 <body>
   <div class="page" id="top">
@@ -12,14 +13,15 @@
     <!-- HEADER -->
     <header class="topbar">
       <div class="topbarInner">
-        <a class="brand" href="index.html">
+        <a class="brand" href="/index.html">
           <span class="lambda">Λ</span><span class="brandText">ISTORE</span>
         </a>
 
         <nav class="topnav topnav--pill">
-          <a class="navLink" href="celebrity.html">Celebrity AIs</a>
-          <a class="navLink" href="upload-ai.html">Upload</a>
-          <a class="navLink" href="pricing.html">Pricing</a>
+          <!-- IMPORTANT: /assets -->
+          <a class="navLink" href="/assets/celebrity.html">Celebrity AIs</a>
+          <a class="navLink" href="/assets/upload-ai.html">Upload</a>
+          <a class="navLink" href="/pricing.html">Pricing</a>
           <a class="navLink" href="#">Terms</a>
           <a class="navLink" href="#">Privacy</a>
 
@@ -42,14 +44,17 @@
     <main class="hero" id="explore">
       <section class="hero-left">
         <h1 class="hero-title" data-i18n="hero.title">Every Expert Has an AI</h1>
+
         <p class="hero-sub" data-i18n="hero.sub">
           Experts turn their knowledge into an AI,<br />
           upload it, and sell access on the platform.
         </p>
+
         <div class="cta-row">
-          <a class="cta primary" href="upload-ai.html" data-i18n="cta.upload">Upload Your Expert AI</a>
+          <a class="cta primary" href="/assets/upload-ai.html" data-i18n="cta.upload">Upload Your Expert AI</a>
           <a class="cta secondary" href="#explore" data-i18n="cta.explore">Explore Expert AIs</a>
         </div>
+
         <p class="hero-note" data-i18n="hero.note">
           People don’t buy conversations.<br />They buy expert knowledge delivered by AI.
         </p>
@@ -57,7 +62,7 @@
 
       <section class="hero-right">
         <div class="laptopWrap">
-          <img src="assets/laptop.png" alt="Laptop" class="laptopImg" />
+          <img src="/assets/laptop.png" alt="Laptop" class="laptopImg" />
           <div class="laptopScreen">
             <div class="aiGrid">
               <button class="aiCard" type="button">
@@ -100,18 +105,14 @@
               Ünlüler kendi yapay zekâlarını yükler, sınırlarını belirler ve düzenli olarak gözden geçirir.<br>
               Hayranlar, ünlünün kamusal tarzını yansıtan denetimli bir deneyim yaşar.
             </p>
-            <p class="celebNote" style="margin-top:10px" data-i18n="celeb.sub2">
-              Gerçek kişiyle bire bir iletişim değildir.
-            </p>
+            <p class="celebNote" data-i18n="celeb.sub2">Gerçek kişiyle bire bir iletişim değildir.</p>
           </div>
-          <a class="pillBtn" href="celebrity.html" data-i18n="celeb.view_all">View all →</a>
+          <a class="pillBtn" href="/assets/celebrity.html" data-i18n="celeb.view_all">View all →</a>
         </div>
 
         <div class="celebGrid is-single">
           <article class="celebCard">
-            <div class="celebAvatar">
-              <span class="celebInitial">★</span>
-            </div>
+            <div class="celebAvatar"><span class="celebInitial">★</span></div>
             <div class="celebBody">
               <div class="celebTop">
                 <div class="celebName" data-i18n="celeb.card1.name">Ünlü Uzman Yapay Zekâ</div>
@@ -120,8 +121,8 @@
               <div class="celebDomain" data-i18n="celeb.card1.domain">Hayran Soruları • Persona</div>
               <p class="celebDesc" data-i18n="celeb.card1.desc">Soru sor, sohbet et, ilham al.</p>
               <div class="celebBtns">
-                <a class="celebBtn celebBtnPrimary" href="celebrity.html" data-i18n="celeb.explore">Keşfet</a>
-                <a class="celebBtn celebBtnGhost" href="celebrity.html" data-i18n="celeb.profile">Profili gör</a>
+                <a class="celebBtn celebBtnPrimary" href="/assets/celebrity.html" data-i18n="celeb.explore">Keşfet</a>
+                <a class="celebBtn celebBtnGhost" href="/assets/celebrity.html" data-i18n="celeb.profile">Profili gör</a>
               </div>
             </div>
           </article>
@@ -134,18 +135,18 @@
       <div class="container footerInner">
         <div class="footerBrand"><span class="lambda">Λ</span>ISTORE</div>
         <div class="footerLinks">
-          <a href="upload-ai.html" data-i18n="footer.upload">Upload</a>
-          <a href="celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
+          <a href="/assets/upload-ai.html" data-i18n="footer.upload">Upload</a>
+          <a href="/assets/celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
           <a href="#" data-i18n="footer.terms">Terms</a>
           <a href="#" data-i18n="footer.privacy">Privacy</a>
-          <a href="pricing.html">Pricing</a>
+          <a href="/pricing.html">Pricing</a>
         </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- Senin i18n script'in -->
+  <!-- i18n -->
   <script>
     (function(){
       const DICT = {
@@ -219,6 +220,7 @@
       function applyLang(lang){
         lang = (lang === "tr") ? "tr" : "en";
         document.documentElement.lang = lang;
+
         document.querySelectorAll("[data-i18n]").forEach(el=>{
           const key = el.getAttribute("data-i18n");
           const val = DICT?.[lang]?.[key];
@@ -227,14 +229,20 @@
           if (htmlKeys.has(key)) el.innerHTML = val;
           else el.textContent = val;
         });
+
         document.getElementById("langValue").textContent = lang.toUpperCase();
         document.querySelectorAll(".langOption").forEach(x=>{
           x.classList.toggle("is-active", x.getAttribute("data-lang") === lang);
         });
+
         try{ localStorage.setItem("aistore_lang", lang); }catch(e){}
+
+        // Keep query param synced
         const url = new URL(location.href);
         url.searchParams.set("lang", lang);
         history.replaceState({}, "", url.toString());
+
+        // Attach lang to internal links
         document.querySelectorAll('a[href]').forEach(a=>{
           const href = a.getAttribute("href");
           if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
@@ -249,10 +257,7 @@
       if(menu){
         const btn = menu.querySelector(".langBtnMini");
         const list = menu.querySelector(".langList");
-        function close(){
-          menu.classList.remove("open");
-          btn.setAttribute("aria-expanded","false");
-        }
+        function close(){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
         btn.addEventListener("click", (e)=>{
           e.stopPropagation();
           const isOpen = menu.classList.toggle("open");
@@ -267,6 +272,7 @@
         document.addEventListener("click", close);
         document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") close(); });
       }
+
       applyLang(getLang());
     })();
   </script>
