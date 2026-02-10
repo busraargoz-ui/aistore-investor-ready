@@ -329,8 +329,6 @@ a{color:inherit;text-decoration:none}
 @media (max-width:1024px){
   .hero{grid-template-columns:1fr;text-align:center;padding:100px 0 70px}
   .hero-right{justify-content:center}
-  .laptopWrap{width:min(720px, 86vw)}
-  .laptopScreen{inset: 11% 10% 22% 10%}
   .celebHeaderRow{flex-direction:column;text-align:center;align-items:center}
   .celebGrid.is-single{grid-template-columns:1fr}
 }
@@ -340,7 +338,8 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
-}
+
+
 
 
 
