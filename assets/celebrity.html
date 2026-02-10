@@ -3,316 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AIStore — AI Marketplace</title>
-  <link rel="stylesheet" href="../styles.css?v=3" />
+  <title>AIStore — Celebrity AIs</title>
+  <link rel="stylesheet" href="styles.css?v=100" />
 </head>
-
 <body>
-  <div class="page" id="top">
-
-    <!-- HEADER -->
+  <div class="page">
     <header class="topbar">
-      <div class="topbarInner">
-        <a class="brand" href="../index.html">
-          <span class="lambda">Λ</span><span class="brandText">ISTORE</span>
-        </a>
-
+      <div class="container topbarInner">
+        <a class="brand" href="index.html"><span class="lambda">Λ</span><span class="brandText">ISTORE</span></a>
         <nav class="topnav topnav--pill">
-          <a class="navLink" href="celebrity.html" data-i18n="nav.celebrity">Celebrity AIs</a>
-          <a class="navLink" href="upload-ai.html" data-i18n="nav.upload">Upload</a>
-
-          <div class="langMenu" id="langMenu">
-            <button class="langBtnMini" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="langIcon">🌐</span>
-              <span class="langValue" id="langValue">EN</span>
-              <span class="langChevron">▾</span>
-            </button>
-
-            <div class="langList" role="listbox" aria-label="Language">
-              <button class="langOption is-active" type="button" data-lang="en">EN</button>
-              <button class="langOption" type="button" data-lang="tr">TR</button>
-            </div>
-          </div>
+          <a class="navLink" href="celebrity.html">Celebrity AIs</a>
+          <a class="navLink" href="upload-ai.html">Upload</a>
+          <a class="navLink" href="pricing.html">Pricing</a>
         </nav>
       </div>
     </header>
 
-    <!-- HERO -->
-    <main class="hero" id="explore">
-      <section class="hero-left">
-        <h1 class="hero-title" data-i18n="hero.title">Every Expert Has an AI</h1>
-
-        <p class="hero-sub" data-i18n="hero.sub">
-          Experts turn their knowledge and experience into an artificial intelligence,<br />
-          upload it to the platform, and sell access to it.
-        </p>
-
-        <div class="cta-row">
-          <a class="cta primary" href="upload-ai.html" data-i18n="cta.upload">Upload Your Expert AI</a>
-          <a class="cta secondary" href="#explore" data-i18n="cta.explore">Explore Expert AIs</a>
-        </div>
-
-        <p style="margin:18px 0 0; color: rgba(234,243,255,.72); line-height:1.55; max-width:520px;"
-           data-i18n="hero.note">
-          People don’t buy conversations.<br />They buy expert knowledge delivered by AI.
-        </p>
-      </section>
-
-      <section class="hero-right">
-        <div class="laptopWrap">
-          <img src="assets/laptop.png" alt="Laptop" class="laptopImg" />
-
-          <div class="laptopScreen">
-            <div class="aiGrid">
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.life_family">Life &amp; Family</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.health">Health</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.career">Career</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.finance">Finance</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.technology">Technology</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-
-              <button class="aiCard" type="button">
-                <div class="aiTitle" data-i18n="cat.faith_belief">Faith &amp; Belief</div>
-                <div class="aiSub"><span class="lambda">Λ</span>I</div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main class="container" style="padding:50px 0 80px;">
+      <h1 class="celebTitle" style="margin:0">Celebrity AIs</h1>
+      <p class="celebSubtitle" style="max-width:820px">
+        Placeholder page. Next: profiles, boundaries, review logs, and verified badges.
+      </p>
     </main>
-
-    <section class="celebSection" aria-label="Celebrity AIs">
-      <div class="container">
-        <div class="celebHeaderRow">
-          <div>
-            <h2 class="celebTitle" data-i18n="celeb.title">Celebrity-Owned Expert AIs</h2>
-            <p class="celebSubtitle" data-i18n="celeb.sub">
-              Celebrities upload their own AIs, define boundaries, and review answers regularly.
-              Fans interact with a curated AI experience supervised by the celebrity.
-            </p>
-            <p class="celebSubtitle" style="margin-top:10px" data-i18n="celeb.sub2">
-              This is not real-time communication with the person.
-            </p>
-          </div>
-
-          <a class="pillBtn" href="celebrity.html" data-i18n="celeb.view_all">View all →</a>
-        </div>
-
-        <div class="celebGrid">
-          <article class="celebCard">
-            <div class="celebAvatar"><span class="celebInitial">★</span></div>
-
-            <div class="celebBody">
-              <div class="celebTop">
-                <div class="celebName" data-i18n="celeb.card1.name">Celebrity AIs</div>
-                <div class="celebBadge" data-i18n="celeb.badge">★ Celebrity-owned</div>
-              </div>
-
-              <div class="celebDomain" data-i18n="celeb.card1.domain">Fan Q&amp;A • Persona • Stories</div>
-              <p class="celebDesc" data-i18n="celeb.card1.desc">
-                Ask questions, explore perspectives, and interact with a supervised AI experience reflecting the celebrity’s public persona.
-              </p>
-
-              <div class="celebBtns">
-                <a class="celebBtn celebBtnPrimary" href="celebrity.html" data-i18n="celeb.explore">Explore</a>
-                <a class="celebBtn celebBtnGhost" href="celebrity.html" data-i18n="celeb.how">How it works?</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="celebNote" data-i18n="celeb.note">
-          * Informational content only. No personal advice.
-        </p>
-      </div>
-    </section>
 
     <footer class="footer">
       <div class="container footerInner">
         <div class="footerBrand"><span class="lambda">Λ</span>ISTORE</div>
         <div class="footerLinks">
-          <a href="upload-ai.html" data-i18n="footer.upload">Upload</a>
-          <a href="celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
-          <a href="#" data-i18n="footer.terms">Terms</a>
-          <a href="#" data-i18n="footer.privacy">Privacy</a>
+          <a href="upload-ai.html">Upload</a>
+          <a href="celebrity.html">Celebrity AIs</a>
+          <a href="pricing.html">Pricing</a>
         </div>
       </div>
     </footer>
-
   </div>
-
-  <script>
-    (function () {
-      const DICT = {
-        en: {
-          "nav.celebrity": "Celebrity AIs",
-          "nav.upload": "Upload",
-
-          "hero.title": "Every Expert Has an AI",
-          "hero.sub": "Experts turn their knowledge and experience into an artificial intelligence,<br />upload it to the platform, and sell access to it.",
-          "hero.note": "People don’t buy conversations.<br />They buy expert knowledge delivered by AI.",
-
-          "cta.upload": "Upload Your Expert AI",
-          "cta.explore": "Explore Expert AIs",
-
-          "cat.life_family": "Life & Family",
-          "cat.health": "Health",
-          "cat.career": "Career",
-          "cat.finance": "Finance",
-          "cat.technology": "Technology",
-          "cat.faith_belief": "Faith & Belief",
-
-          "celeb.title": "Celebrity-Owned Expert AIs",
-          "celeb.sub": "Celebrities upload their own AIs, define boundaries, and review answers regularly. Fans interact with a curated AI experience supervised by the celebrity.",
-          "celeb.sub2": "This is not real-time communication with the person.",
-          "celeb.view_all": "View all →",
-          "celeb.badge": "★ Celebrity-owned",
-          "celeb.card1.name": "Celebrity AIs",
-          "celeb.card1.domain": "Fan Q&A • Persona • Stories",
-          "celeb.card1.desc": "Ask questions, explore perspectives, and interact with a supervised AI experience reflecting the celebrity’s public persona.",
-          "celeb.explore": "Explore",
-          "celeb.how": "How it works?",
-          "celeb.note": "* Informational content only. No personal advice.",
-
-          "footer.upload": "Upload",
-          "footer.celebrity": "Celebrity AIs",
-          "footer.terms": "Terms",
-          "footer.privacy": "Privacy"
-        },
-
-        tr: {
-          "nav.celebrity": "Ünlü Yapay Zekâlar",
-          "nav.upload": "Yükle",
-
-          "hero.title": "Her Uzmanın Bir Yapay Zekâsı Var",
-          "hero.sub": "Uzmanlar bilgi ve deneyimlerini bir yapay zekâya dönüştürür,<br />platforma yükler ve erişimini satışa sunar.",
-          "hero.note": "İnsanlar sohbet satın almaz.<br />Yapay zekâ ile sunulan uzmanlığı satın alır.",
-
-          "cta.upload": "Uzman Yapay Zekânı Yükle",
-          "cta.explore": "Uzman Yapay Zekâları Keşfet",
-
-          "cat.life_family": "Yaşam & Aile",
-          "cat.health": "Sağlık",
-          "cat.career": "Kariyer",
-          "cat.finance": "Finans",
-          "cat.technology": "Teknoloji",
-          "cat.faith_belief": "İnanç & Değerler",
-
-          "celeb.title": "Ünlülere Ait Uzman Yapay Zekâlar",
-          "celeb.sub": "Ünlüler kendi yapay zekâlarını platforma kendileri yükler. Yanıt tarzını ve sınırlarını belirler, içerikleri düzenli olarak kontrol edip günceller. Hayranlar, ünlü tarafından denetlenen bir yapay zekâ deneyimi yaşar.",
-          "celeb.sub2": "Bu deneyim, kişiyle bire bir iletişim değildir.",
-          "celeb.view_all": "Tümünü gör →",
-          "celeb.badge": "★ Ünlüye ait",
-          "celeb.card1.name": "Ünlü Yapay Zekâlar",
-          "celeb.card1.domain": "Hayran Soruları • Persona • Hikâyeler",
-          "celeb.card1.desc": "Sorular sor, bakış açılarını keşfet ve ünlünün kamusal kişiliğini yansıtan, denetimli bir yapay zekâ deneyimi yaşa.",
-          "celeb.explore": "Keşfet",
-          "celeb.how": "Nasıl çalışır?",
-          "celeb.note": "* Yalnızca bilgilendirme amaçlıdır. Kişisel tavsiye değildir.",
-
-          "footer.upload": "Yükle",
-          "footer.celebrity": "Ünlü Yapay Zekâlar",
-          "footer.terms": "Koşullar",
-          "footer.privacy": "Gizlilik"
-        }
-      };
-
-      function getLang() {
-        const p = new URLSearchParams(location.search);
-        const urlLang = (p.get("lang") || "").toLowerCase();
-        if (urlLang === "tr" || urlLang === "en") return urlLang;
-
-        try {
-          const saved = (localStorage.getItem("aistore_lang") || "").toLowerCase();
-          if (saved === "tr" || saved === "en") return saved;
-        } catch (e) {}
-        return "en";
-      }
-
-      function applyLang(lang) {
-        lang = (lang === "tr") ? "tr" : "en";
-        document.documentElement.lang = lang;
-
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const key = el.getAttribute("data-i18n");
-          const val = DICT[lang]?.[key];
-          if (!val) return;
-
-          if (key.startsWith("hero.") || key.startsWith("celeb.")) el.innerHTML = val;
-          else el.textContent = val;
-        });
-
-        const langValue = document.getElementById("langValue");
-        if (langValue) langValue.textContent = (lang === "tr" ? "TR" : "EN");
-
-        document.querySelectorAll(".langOption").forEach(x => {
-          x.classList.toggle("is-active", x.getAttribute("data-lang") === lang);
-        });
-
-        try { localStorage.setItem("aistore_lang", lang); } catch (e) {}
-
-        const url = new URL(location.href);
-        url.searchParams.set("lang", lang);
-        history.replaceState({}, "", url.toString());
-
-        document.querySelectorAll('a[href]').forEach(a => {
-          const href = a.getAttribute("href");
-          if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
-          const u = new URL(href, location.href);
-          u.searchParams.set("lang", lang);
-          const qs = u.searchParams.toString();
-          a.setAttribute("href", u.pathname + (qs ? "?" + qs : "") + u.hash);
-        });
-      }
-
-      const menu = document.getElementById("langMenu");
-      if (menu) {
-        const btn = menu.querySelector(".langBtnMini");
-        const list = menu.querySelector(".langList");
-
-        function close() {
-          menu.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-
-        btn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          const isOpen = menu.classList.toggle("open");
-          btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-
-        list.addEventListener("click", (e) => {
-          const opt = e.target.closest(".langOption");
-          if (!opt) return;
-          applyLang(opt.getAttribute("data-lang"));
-          close();
-        });
-
-        document.addEventListener("click", close);
-        document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
-      }
-
-      applyLang(getLang());
-    })();
-  </script>
-
 </body>
 </html>
