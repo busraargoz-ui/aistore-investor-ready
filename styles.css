@@ -140,7 +140,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   LAPTOP (single source)
+   LAPTOP (single source) — FINAL
    ========================= */
 .hero-right{display:flex;justify-content:center}
 
@@ -156,13 +156,13 @@ a{color:inherit;text-decoration:none}
 .laptopWrap:hover{transform:perspective(1000px) rotateY(0deg) scale(1.01)}
 .laptopImg{width:100%;height:auto;display:block}
 
-/* screen area (fits YOUR laptop.png) */
+/* screen area (fits your laptop.png better) */
 .laptopScreen{
   position:absolute;
-  left: 12.2%;
-  right: 12.2%;
-  top: 9.6%;
-  bottom: 23.8%;
+  left: 10.8%;
+  right: 10.8%;
+  top: 9.3%;
+  bottom: 23.7%;
   border-radius: 18px;
   overflow:hidden;
   background: rgba(10,14,28,.72);
@@ -180,6 +180,8 @@ a{color:inherit;text-decoration:none}
   gap: 12px;
   align-content:center;
 }
+
+/* cards + HOVER (senin kaybolan hover burada) */
 .aiCard{
   background:rgba(255,255,255,.08);
   border-radius:16px;
@@ -189,21 +191,31 @@ a{color:inherit;text-decoration:none}
   color:#fff;
   border:1px solid rgba(255,255,255,.10);
   backdrop-filter:blur(6px);
+
+  /* hover çalışsın diye şart */
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
 }
+.aiCard:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 32px rgba(0,0,0,.3);
+  background:rgba(255,255,255,.12);
+}
+
 .aiTitle{font-size:15px}
 .aiSub{font-size:16px;letter-spacing:.02em;color:var(--accent);margin-top:6px}
 
 /* responsive */
 @media (max-width: 1100px){
   .laptopWrap{ width:min(640px, 62vw); max-width:640px; }
-  .laptopScreen{ left: 12%; right: 12%; top: 9.8%; bottom: 24.5%; }
+  .laptopScreen{ left: 10.8%; right: 10.8%; top: 9.7%; bottom: 24.2%; }
 }
 @media (max-width: 700px){
   .laptopWrap{ width:min(520px, 92vw); max-width:520px; transform:none; }
   .laptopWrap:hover{ transform:none; }
-  .laptopScreen{ left: 11.5%; right: 11.5%; top: 10%; bottom: 25%; border-radius:16px; }
+  .laptopScreen{ left: 10.5%; right: 10.5%; top: 9.9%; bottom: 24.8%; border-radius:16px; }
   .aiGrid{ grid-template-columns: 1fr; }
 }
+
 /* CELEB SECTION */
 .celebSection{padding:90px 0 110px}
 .celebHeaderRow{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;margin-bottom:38px}
@@ -338,6 +350,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
