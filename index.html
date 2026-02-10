@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AIStore — AI Marketplace</title>
-  <link rel="stylesheet" href="styles.css?v=100" />
+  <link rel="stylesheet" href="styles.css?v=20" />
 </head>
 <body>
   <div class="page" id="top">
-
+    <!-- HEADER -->
     <header class="topbar">
       <div class="container topbarInner">
         <a class="brand" href="index.html">
@@ -16,11 +16,11 @@
         </a>
 
         <nav class="topnav topnav--pill">
-          <a class="navLink" href="celebrity.html" data-i18n="nav.celebrity">Celebrity AIs</a>
-          <a class="navLink" href="upload-ai.html" data-i18n="nav.upload">Upload</a>
-          <a class="navLink" href="pricing.html" data-i18n="nav.pricing">Pricing</a>
-          <a class="navLink" href="#" data-i18n="nav.terms">Terms</a>
-          <a class="navLink" href="#" data-i18n="nav.privacy">Privacy</a>
+          <a class="navLink" href="celebrity.html">Celebrity AIs</a>
+          <a class="navLink" href="upload-ai.html">Upload</a>
+          <a class="navLink" href="pricing.html">Pricing</a>
+          <a class="navLink" href="#">Terms</a>
+          <a class="navLink" href="#">Privacy</a>
 
           <div class="langMenu" id="langMenu">
             <button class="langBtnMini" type="button" aria-haspopup="listbox" aria-expanded="false">
@@ -37,7 +37,8 @@
       </div>
     </header>
 
-    <main class="container hero" id="explore">
+    <!-- HERO -->
+    <main class="hero container" id="explore">
       <section class="hero-left">
         <h1 class="hero-title" data-i18n="hero.title">Every Expert Has an AI</h1>
         <p class="hero-sub" data-i18n="hero.sub">
@@ -58,55 +59,38 @@
       <section class="hero-right">
         <div class="laptopWrap">
           <img src="assets/laptop.png" alt="Laptop" class="laptopImg" />
+
           <div class="laptopScreen">
-            <div class="aiGrid">
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.life_family">Life &amp; Family</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.health">Health</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.career">Career</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.finance">Finance</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.technology">Technology</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-              <button class="aiCard" type="button"><div class="aiTitle" data-i18n="cat.faith_belief">Faith &amp; Belief</div><div class="aiSub"><span class="lambda">Λ</span>I</div></button>
-            </div>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.life_family">Life &amp; Family</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.health">Health</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.career">Career</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.finance">Finance</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.technology">Technology</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
+            <button class="aiCard" type="button">
+              <div class="aiTitle" data-i18n="cat.faith_belief">Faith &amp; Belief</div>
+              <div class="aiSub"><span class="lambda">Λ</span>I</div>
+            </button>
           </div>
         </div>
       </section>
     </main>
 
-    <section class="celebSection" aria-label="Featured Celebrity AIs">
-      <div class="container">
-        <div class="celebHeaderRow">
-          <div>
-            <h2 class="celebTitle" data-i18n="celeb.title">Celebrity-Owned Expert AIs</h2>
-            <p class="celebSubtitle" data-i18n="celeb.sub">
-              Celebrities publish their own AIs, set boundaries, and review them regularly.
-              Fans get a supervised experience that reflects the celebrity’s public persona.
-            </p>
-            <p class="celebNote" style="margin-top:10px" data-i18n="celeb.sub2">Not real-time communication with the person.</p>
-          </div>
-          <a class="pillBtn" href="celebrity.html" data-i18n="celeb.view_all">View all →</a>
-        </div>
-
-        <div class="celebGrid is-single">
-          <article class="celebCard">
-            <div class="celebAvatar"><span class="celebInitial">★</span></div>
-            <div class="celebBody">
-              <div class="celebTop">
-                <div class="celebName" data-i18n="celeb.card1.name">Celebrity Expert AI</div>
-                <div class="celebBadge" data-i18n="celeb.badge">★ Celebrity-owned</div>
-              </div>
-              <div class="celebDomain" data-i18n="celeb.card1.domain">Fan Q&A • Persona</div>
-              <p class="celebDesc" data-i18n="celeb.card1.desc">Ask, chat, and get inspired.</p>
-              <div class="celebBtns">
-                <a class="celebBtn celebBtnPrimary" href="celebrity.html" data-i18n="celeb.explore">Explore</a>
-                <a class="celebBtn celebBtnGhost" href="celebrity.html" data-i18n="celeb.profile">View profile</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footerInner">
         <div class="footerBrand"><span class="lambda">Λ</span>ISTORE</div>
@@ -115,121 +99,118 @@
           <a href="celebrity.html" data-i18n="footer.celebrity">Celebrity AIs</a>
           <a href="#" data-i18n="footer.terms">Terms</a>
           <a href="#" data-i18n="footer.privacy">Privacy</a>
-          <a href="pricing.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="pricing.html">Pricing</a>
         </div>
       </div>
     </footer>
   </div>
 
   <script>
-  (function(){
-    const DICT = {
-      en:{
-        "nav.celebrity":"Celebrity AIs","nav.upload":"Upload","nav.pricing":"Pricing","nav.terms":"Terms","nav.privacy":"Privacy",
-        "hero.title":"Every Expert Has an AI",
-        "hero.sub":"Experts turn their knowledge into an AI,<br />upload it, and sell access on the platform.",
-        "hero.note":"People don’t buy conversations.<br />They buy expert knowledge delivered by AI.",
-        "cta.upload":"Upload Your Expert AI","cta.explore":"Explore Expert AIs",
-        "cat.life_family":"Life & Family","cat.health":"Health","cat.career":"Career","cat.finance":"Finance","cat.technology":"Technology","cat.faith_belief":"Faith & Belief",
-        "celeb.title":"Celebrity-Owned Expert AIs",
-        "celeb.sub":"Celebrities publish their own AIs, set boundaries, and review them regularly. Fans get a supervised experience that reflects the celebrity’s public persona.",
-        "celeb.sub2":"Not real-time communication with the person.",
-        "celeb.view_all":"View all →",
-        "celeb.badge":"★ Celebrity-owned",
-        "celeb.card1.name":"Celebrity Expert AI",
-        "celeb.card1.domain":"Fan Q&A • Persona",
-        "celeb.card1.desc":"Ask, chat, and get inspired.",
-        "celeb.explore":"Explore","celeb.profile":"View profile",
-        "footer.upload":"Upload","footer.celebrity":"Celebrity AIs","footer.terms":"Terms","footer.privacy":"Privacy","footer.pricing":"Pricing"
-      },
-      tr:{
-        "nav.celebrity":"Ünlü AI’lar","nav.upload":"Yükle","nav.pricing":"Fiyatlar","nav.terms":"Koşullar","nav.privacy":"Gizlilik",
-        "hero.title":"Her Uzmanın Yapay Zekâsı Var",
-        "hero.sub":"Uzmanlar bilgi ve deneyimlerini yapay zekâya dönüştürür,<br />platforma yükler ve erişimi satışa açar.",
-        "hero.note":"İnsanlar sohbet satın almaz.<br />Yapay zekâ ile sunulan uzmanlığı satın alır.",
-        "cta.upload":"Uzman Yapay Zekânı Yükle","cta.explore":"Uzman Yapay Zekâları Keşfet",
-        "cat.life_family":"Yaşam & Aile","cat.health":"Sağlık","cat.career":"Kariyer","cat.finance":"Finans","cat.technology":"Teknoloji","cat.faith_belief":"İnanç & Değerler",
-        "celeb.title":"Ünlülere Ait Uzman Yapay Zekâlar",
-        "celeb.sub":"Ünlüler kendi yapay zekâlarını yayınlar, sınırlarını belirler ve düzenli olarak gözden geçirir. Hayranlar, ünlünün kamusal tarzını yansıtan denetimli bir deneyim yaşar.",
-        "celeb.sub2":"Gerçek kişiyle bire bir iletişim değildir.",
-        "celeb.view_all":"Tümünü gör →",
-        "celeb.badge":"★ Ünlüye ait",
-        "celeb.card1.name":"Ünlü Uzman Yapay Zekâ",
-        "celeb.card1.domain":"Hayran Soruları • Persona",
-        "celeb.card1.desc":"Soru sor, sohbet et, ilham al.",
-        "celeb.explore":"Keşfet","celeb.profile":"Profili gör",
-        "footer.upload":"Yükle","footer.celebrity":"Ünlü AI’lar","footer.terms":"Koşullar","footer.privacy":"Gizlilik","footer.pricing":"Fiyatlar"
+    (function(){
+      const DICT = {
+        en: {
+          "hero.title":"Every Expert Has an AI",
+          "hero.sub":"Experts turn their knowledge into an AI,<br />upload it, and sell access on the platform.",
+          "hero.note":"People don’t buy conversations.<br />They buy expert knowledge delivered by AI.",
+          "cta.upload":"Upload Your Expert AI",
+          "cta.explore":"Explore Expert AIs",
+          "cat.life_family":"Life & Family",
+          "cat.health":"Health",
+          "cat.career":"Career",
+          "cat.finance":"Finance",
+          "cat.technology":"Technology",
+          "cat.faith_belief":"Faith & Belief",
+          "footer.upload":"Upload",
+          "footer.celebrity":"Celebrity AIs",
+          "footer.terms":"Terms",
+          "footer.privacy":"Privacy"
+        },
+        tr: {
+          "hero.title":"Her Uzmanın Yapay Zekâsı Var",
+          "hero.sub":"Uzmanlar bilgi ve deneyimlerini yapay zekâya dönüştürür,<br />platforma yükler ve erişimi satışa açar.",
+          "hero.note":"İnsanlar sohbet satın almaz.<br />Yapay zekâ ile sunulan uzmanlığı satın alır.",
+          "cta.upload":"Uzman Yapay Zekânı Yükle",
+          "cta.explore":"Uzman Yapay Zekâları Keşfet",
+          "cat.life_family":"Yaşam & Aile",
+          "cat.health":"Sağlık",
+          "cat.career":"Kariyer",
+          "cat.finance":"Finans",
+          "cat.technology":"Teknoloji",
+          "cat.faith_belief":"İnanç & Değerler",
+          "footer.upload":"Yükle",
+          "footer.celebrity":"Ünlü Yapay Zekâlar",
+          "footer.terms":"Koşullar",
+          "footer.privacy":"Gizlilik"
+        }
+      };
+
+      function getLang(){
+        const p = new URLSearchParams(location.search);
+        const urlLang = (p.get("lang") || "").toLowerCase();
+        if (urlLang === "tr" || urlLang === "en") return urlLang;
+        try{
+          const saved = (localStorage.getItem("aistore_lang") || "").toLowerCase();
+          if (saved === "tr" || saved === "en") return saved;
+        }catch(e){}
+        return "en";
       }
-    };
 
-    const htmlKeys = new Set(["hero.sub","hero.note"]);
+      function applyLang(lang){
+        lang = (lang === "tr") ? "tr" : "en";
+        document.documentElement.lang = lang;
 
-    function getLang(){
-      const p=new URLSearchParams(location.search);
-      const l=(p.get("lang")||"").toLowerCase();
-      if(l==="tr"||l==="en") return l;
-      try{
-        const s=(localStorage.getItem("aistore_lang")||"").toLowerCase();
-        if(s==="tr"||s==="en") return s;
-      }catch(e){}
-      return "en";
-    }
+        document.querySelectorAll("[data-i18n]").forEach(el=>{
+          const key = el.getAttribute("data-i18n");
+          const val = DICT?.[lang]?.[key];
+          if(!val) return;
+          const htmlKeys = new Set(["hero.sub","hero.note"]);
+          if (htmlKeys.has(key)) el.innerHTML = val;
+          else el.textContent = val;
+        });
 
-    function applyLang(lang){
-      lang = (lang==="tr") ? "tr" : "en";
-      document.documentElement.lang = lang;
+        const lv = document.getElementById("langValue");
+        if(lv) lv.textContent = lang.toUpperCase();
 
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key=el.getAttribute("data-i18n");
-        const val=DICT?.[lang]?.[key];
-        if(!val) return;
-        if(htmlKeys.has(key)) el.innerHTML = val;
-        else el.textContent = val;
-      });
+        document.querySelectorAll(".langOption").forEach(x=>{
+          x.classList.toggle("is-active", x.getAttribute("data-lang") === lang);
+        });
 
-      document.getElementById("langValue").textContent = lang.toUpperCase();
-      document.querySelectorAll(".langOption").forEach(x=>{
-        x.classList.toggle("is-active", x.getAttribute("data-lang")===lang);
-      });
+        try{ localStorage.setItem("aistore_lang", lang); }catch(e){}
 
-      try{ localStorage.setItem("aistore_lang", lang); }catch(e){}
+        const url = new URL(location.href);
+        url.searchParams.set("lang", lang);
+        history.replaceState({}, "", url.toString());
 
-      const url=new URL(location.href);
-      url.searchParams.set("lang", lang);
-      history.replaceState({}, "", url.toString());
+        document.querySelectorAll('a[href]').forEach(a=>{
+          const href = a.getAttribute("href");
+          if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
+          const u = new URL(href, location.href);
+          u.searchParams.set("lang", lang);
+          const qs = u.searchParams.toString();
+          a.setAttribute("href", u.pathname + (qs ? "?" + qs : "") + u.hash);
+        });
+      }
 
-      // keep lang param across internal links
-      document.querySelectorAll('a[href]').forEach(a=>{
-        const href=a.getAttribute("href");
-        if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) return;
-        const u=new URL(href, location.href);
-        u.searchParams.set("lang", lang);
-        a.setAttribute("href", u.pathname + "?" + u.searchParams.toString() + u.hash);
-      });
-    }
+      const menu = document.getElementById("langMenu");
+      if(menu){
+        const btn = menu.querySelector(".langBtnMini");
+        const list = menu.querySelector(".langList");
+        function close(){ menu.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
+        btn.addEventListener("click", (e)=>{
+          e.stopPropagation();
+          const isOpen = menu.classList.toggle("open");
+          btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        list.addEventListener("click", (e)=>{
+          const opt = e.target.closest(".langOption");
+          if(opt){ applyLang(opt.dataset.lang); close(); }
+        });
+        document.addEventListener("click", close);
+        document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") close(); });
+      }
 
-    const menu=document.getElementById("langMenu");
-    if(menu){
-      const btn=menu.querySelector(".langBtnMini");
-      const list=menu.querySelector(".langList");
-      function close(){menu.classList.remove("open"); btn.setAttribute("aria-expanded","false");}
-      btn.addEventListener("click",(e)=>{
-        e.stopPropagation();
-        const o=menu.classList.toggle("open");
-        btn.setAttribute("aria-expanded", o?"true":"false");
-      });
-      list.addEventListener("click",(e)=>{
-        const opt=e.target.closest(".langOption");
-        if(!opt) return;
-        applyLang(opt.dataset.lang);
-        close();
-      });
-      document.addEventListener("click", close);
-      document.addEventListener("keydown",(e)=>{if(e.key==="Escape") close();});
-    }
-
-    applyLang(getLang());
-  })();
+      applyLang(getLang());
+    })();
   </script>
 </body>
 </html>
