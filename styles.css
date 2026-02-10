@@ -161,8 +161,8 @@ a{color:inherit;text-decoration:none}
   position:absolute;
   left: 10.8%;
   right: 10.8%;
-  top: 9.3%;
-  bottom: 23.7%;
+  top: 10.1%;
+  bottom: 28.6%;
   border-radius: 18px;
   overflow:hidden;
   background: rgba(10,14,28,.72);
@@ -350,6 +350,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
