@@ -323,3 +323,16 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+.laptopWrap{
+  max-width: 760px;
+  width: 100%;
+}
+
+.hero{
+  gap: 48px;
+}
+
+.laptopScreen{
+  inset: 9% 8% 19% 8%;
+}
+
