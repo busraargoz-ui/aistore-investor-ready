@@ -140,12 +140,11 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Laptop (CLEAN - single source of truth) */
-/* Laptop */
 .hero-right{display:flex;justify-content:center}
 
 .laptopWrap{
   position:relative;
-  width:min(760px, 44vw);   /* 820px çok büyütüyordu */
+  width:min(760px, 44vw);
   max-width:760px;
   filter:drop-shadow(0 40px 80px rgba(56,189,248,.22));
   transform:perspective(1000px) rotateY(4deg);
@@ -154,13 +153,13 @@ a{color:inherit;text-decoration:none}
 .laptopWrap:hover{transform:perspective(1000px) rotateY(0deg) scale(1.01)}
 .laptopImg{width:100%;height:auto;display:block}
 
-/* EKRANI LAPTOP’IN İÇİNE OTURTAN AYAR (daha doğru inset) */
+/* EKRANI LAPTOP’IN İÇİNE OTURTAN AYAR */
 .laptopScreen{
   position:absolute;
-  left: 14%;
-  right: 14%;
-  top: 8.2%;
-  bottom: 19.8%;
+  left: 15.2%;
+  right: 15.2%;
+  top: 8.8%;
+  bottom: 24.0%;            /* <-- EN KRİTİK: taşmayı keser */
   border-radius: 18px;
   overflow:hidden;
   background: rgba(10,14,28,.72);
@@ -176,7 +175,8 @@ a{color:inherit;text-decoration:none}
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap:14px;
-  align-content:center;     /* taşmayı azaltır */
+  align-content:start;      /* <-- center yerine start daha stabil */
+  justify-items:stretch;
 }
 
 /* cards (dark, like your good version) */
@@ -363,6 +363,7 @@ a{color:inherit;text-decoration:none}
 .laptopScreen{
   inset: 9% 8% 19% 8%;
 }
+
 
 
 
