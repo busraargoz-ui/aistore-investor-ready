@@ -174,6 +174,51 @@ a{color:inherit;text-decoration:none}
   border:1px solid rgba(255,255,255,.03);
   box-shadow:inset 0 0 120px rgba(0,0,0,.92);
 }
+/* LAPTOP — single truth + easy tuning */
+.hero-right{display:flex;justify-content:center;align-items:center}
+
+.laptopWrap{
+  position:relative;
+  width:min(700px,42vw);
+  max-width:700px;
+  filter:drop-shadow(0 38px 76px rgba(56,189,248,.20));
+
+  /* laptop.png ekran boşluğu */
+  --screen-left: 13.7%;
+  --screen-right: 13.8%;
+  --screen-top: 9%;
+  --screen-bottom: 15.6%;
+}
+
+/* laptop görseli tıklamayı kapmasın */
+.laptopImg{
+  width:100%;
+  height:auto;
+  display:block;
+  position:relative;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* ekran içerik katmanı üstte kalsın */
+.laptopScreen{
+  position:absolute;
+  z-index:2;
+  pointer-events:auto;
+
+  left:var(--screen-left);
+  right:var(--screen-right);
+  top:var(--screen-top);
+  bottom:var(--screen-bottom);
+
+  border-radius:16px;
+  overflow:hidden;
+  padding:0;
+
+  background:rgba(10,14,28,.98);
+  border:1px solid rgba(255,255,255,.03);
+  box-shadow:inset 0 0 120px rgba(0,0,0,.92);
+}
 
 .aiGrid{
   height:100%;
@@ -182,8 +227,9 @@ a{color:inherit;text-decoration:none}
   grid-template-columns:repeat(2,1fr);
   gap:8px;
   align-content:center;
-  padding:10px; /* içeride nefes kalsın */
+  padding:10px;
 }
+
 .aiCard{
   background:rgba(255,255,255,.06);
   border-radius:13px;
@@ -199,7 +245,10 @@ a{color:inherit;text-decoration:none}
   justify-content:center;
   align-items:center;
   min-height:76px;
+  cursor:pointer; /* ✅ tek satır burada dursun */
 }
+
+
 /* CELEB SECTION */
 .celebSection{padding:90px 0 110px}
 .celebHeaderRow{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;margin-bottom:38px}
@@ -334,6 +383,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
