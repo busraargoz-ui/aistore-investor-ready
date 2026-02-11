@@ -140,80 +140,112 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   LAPTOP (single source) — FINAL
+   LAPTOP — GROK NET DÜZELTME (kartlar tam oturacak, taşma yok)
    ========================= */
-.hero-right{display:flex;justify-content:center}
-
-/* laptop image wrapper */
-.laptopWrap{
-  position:relative;
-  width:min(720px, 42vw);      /* laptop büyümesin */
-  max-width:720px;
-  filter:drop-shadow(0 40px 80px rgba(56,189,248,.22));
-  transform:perspective(1000px) rotateY(4deg);
-  transition:transform .6s ease;
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.laptopWrap:hover{transform:perspective(1000px) rotateY(0deg) scale(1.01)}
-.laptopImg{width:100%;height:auto;display:block}
 
-/* screen area (fits your laptop.png better) */
-.laptopScreen{
-  position:absolute;
-  left: 10.8%;
-  right: 10.8%;
-  top: 10.1%;
-  bottom: 28.6%;
+.laptopWrap {
+  position: relative;
+  width: min(720px, 44vw);
+  max-width: 720px;
+  filter: drop-shadow(0 40px 80px rgba(56,189,248,.22));
+  transform: perspective(1000px) rotateY(3deg);
+  transition: transform .6s ease;
+}
+
+.laptopWrap:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.015);
+}
+
+.laptopImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ekran alanı — tam oturması için ince ayar */
+.laptopScreen {
+  position: absolute;
+  left: 9.8%;      /* kenar boşlukları azaltıldı */
+  right: 9.8%;
+  top: 9.2%;       /* üst boşluk azaltıldı */
+  bottom: 18.8%;   /* alt boşluk azaltıldı, taşma kalkar */
   border-radius: 18px;
-  overflow:hidden;
-  background: rgba(10,14,28,.72);
-  border: 1px solid rgba(255,255,255,.06);
-  box-shadow: inset 0 0 70px rgba(0,0,0,.65);
-  padding: 12px;
+  overflow: hidden;
+  background: rgba(10,14,28,.92);
+  border: 1px solid rgba(255,255,255,.05);
+  box-shadow: inset 0 0 80px rgba(0,0,0,.75);
+  padding: 10px;   /* padding küçültüldü, kartlar daha rahat sığar */
 }
 
-/* inside content */
-.aiGrid{
-  height:100%;
-  width:100%;
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  align-content:center;
+/* İç grid — kartlar tam ortada ve simetrik */
+.aiGrid {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;       /* gap küçültüldü */
+  align-content: center;
+  justify-content: center;
+  padding: 4px;
 }
 
-/* cards + HOVER (senin kaybolan hover burada) */
-.aiCard{
-  background:rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:14px 10px;
-  text-align:center;
-  font-weight:900;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter:blur(6px);
-
-  /* hover çalışsın diye şart */
+/* Kartlar — taşma önlendi, boyut dengelendi */
+.aiCard {
+  background: rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.09);
+  backdrop-filter: blur(8px);
   transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
-}
-.aiCard:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 32px rgba(0,0,0,.3);
-  background:rgba(255,255,255,.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px; /* kartların yüksekliği eşit olsun */
 }
 
-.aiTitle{font-size:15px}
-.aiSub{font-size:16px;letter-spacing:.02em;color:var(--accent);margin-top:6px}
-
-/* responsive */
-@media (max-width: 1100px){
-  .laptopWrap{ width:min(640px, 62vw); max-width:640px; }
-  .laptopScreen{ left: 10.8%; right: 10.8%; top: 9.7%; bottom: 24.2%; }
+.aiCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  background: rgba(255,255,255,.11);
 }
-@media (max-width: 700px){
-  .laptopWrap{ width:min(520px, 92vw); max-width:520px; transform:none; }
-  .laptopWrap:hover{ transform:none; }
-  .laptopScreen{ left: 10.5%; right: 10.5%; top: 9.9%; bottom: 24.8%; border-radius:16px; }
-  .aiGrid{ grid-template-columns: 1fr; }
+
+.aiTitle {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.aiSub {
+  font-size: 17px;
+  letter-spacing: .02em;
+  color: var(--accent);
+}
+
+/* Responsive — senin 1536×864 ekranında taşma olmaması için */
+@media (max-width: 1600px) {
+  .laptopWrap { width: min(680px, 42vw); }
+  .laptopScreen { left: 9.5%; right: 9.5%; top: 9%; bottom: 18.5%; }
+}
+
+@media (max-width: 1100px) {
+  .laptopWrap { width: min(620px, 55vw); }
+  .laptopScreen { left: 9%; right: 9%; top: 8.8%; bottom: 18%; }
+}
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; text-align: center; padding: 80px 0 60px; }
+  .laptopWrap { width: min(520px, 90vw); transform: none; }
+  .laptopWrap:hover { transform: none; }
+  .laptopScreen { left: 8.5%; right: 8.5%; top: 8.5%; bottom: 17.5%; padding: 8px; gap: 8px; }
+  .aiGrid { grid-template-columns: 1fr; } /* mobilde tek sütun */
 }
 
 /* CELEB SECTION */
@@ -350,6 +382,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
