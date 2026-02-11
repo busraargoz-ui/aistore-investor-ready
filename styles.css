@@ -139,9 +139,7 @@ a{color:inherit;text-decoration:none}
   transform:translateY(-4px);
 }
 
-/* =========================
-   LAPTOP — GROK SON DÜZELTME (tam gömülü + yan taşma kalktı)
-   ========================= */
+/* LAPTOP — GROK KESİN OTURMA (son taşma kalktı, 1536×864'te tam yapışık) */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -150,15 +148,15 @@ a{color:inherit;text-decoration:none}
 
 .laptopWrap {
   position: relative;
-  width: min(720px, 44vw);
-  max-width: 720px;
+  width: min(710px, 43vw); /* biraz daha daraltıldı */
+  max-width: 710px;
   filter: drop-shadow(0 40px 80px rgba(56,189,248,.22));
-  transform: perspective(1000px) rotateY(2deg);
+  transform: perspective(1000px) rotateY(1.5deg); /* daha doğal 3D */
   transition: transform .6s ease;
 }
 
 .laptopWrap:hover {
-  transform: perspective(1000px) rotateY(0deg) scale(1.015);
+  transform: perspective(1000px) rotateY(0deg) scale(1.012);
 }
 
 .laptopImg {
@@ -167,87 +165,75 @@ a{color:inherit;text-decoration:none}
   display: block;
 }
 
-/* Ekran alanı — GÖMÜLÜ HİSSİ İÇİN İNCE AYAR */
 .laptopScreen {
   position: absolute;
-  left: 9.2%;       /* yan boşluklar daraltıldı, taşma kalkar */
-  right: 9.2%;
-  top: 8.6%;        /* üst boşluk azaltıldı */
-  bottom: 17.8%;    /* alt boşluk azaltıldı, kartlar tam sığar */
+  left: 8.8%;       /* yanlar daha dar */
+  right: 8.8%;
+  top: 8.4%;        /* üst daha sıkı */
+  bottom: 17.2%;    /* alt boşluk azaltıldı, taşma kalkar */
   border-radius: 18px;
   overflow: hidden;
-  background: rgba(10,14,28,.96); /* koyu + biraz opak, cam gibi */
-  border: 1px solid rgba(255,255,255,.06); /* hafif parlak çerçeve */
-  box-shadow: inset 0 0 100px rgba(0,0,0,.85), 0 0 30px rgba(0,0,0,.6); /* çift gölge - derinlik maksimum */
-  padding: 9px;     /* iç boşluk küçültüldü */
+  background: rgba(10,14,28,.97); /* biraz daha opak, cam gibi */
+  border: 1px solid rgba(255,255,255,.05);
+  box-shadow: inset 0 0 110px rgba(0,0,0,.88); /* derinlik artırıldı */
+  padding: 8px;     /* iç boşluk küçültüldü */
 }
 
-/* İç grid — kartlar tam ortalı */
 .aiGrid {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 9px;         /* gap küçültüldü, sıkı yerleşim */
+  gap: 9px;
   align-content: center;
   justify-content: center;
   padding: 3px;
 }
 
-/* Kartlar — taşma önlendi, boyut dengelendi */
 .aiCard {
-  background: rgba(255,255,255,.06);
+  background: rgba(255,255,255,.065);
   border-radius: 14px;
-  padding: 16px 10px;
+  padding: 15px 9px; /* padding küçültüldü */
   text-align: center;
   font-weight: 900;
   color: #fff;
   border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(9px);
   transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 82px;
+  min-height: 80px;
 }
 
 .aiCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,.35);
-  background: rgba(255,255,255,.10);
+  background: rgba(255,255,255,.095);
 }
 
-.aiTitle {
-  font-size: 15px;
-  margin-bottom: 4px;
-}
+.aiTitle { font-size: 15px; margin-bottom: 4px; }
+.aiSub { font-size: 17px; letter-spacing: .02em; color: var(--accent); }
 
-.aiSub {
-  font-size: 17px;
-  letter-spacing: .02em;
-  color: var(--accent);
-}
-
-/* Responsive — 1536×864'te tam oturması için */
+/* Responsive - senin ekranında taşma olmaması için */
 @media (max-width: 1600px) {
-  .laptopWrap { width: min(680px, 42vw); }
-  .laptopScreen { left: 8.8%; right: 8.8%; top: 8.4%; bottom: 17.5%; }
+  .laptopWrap { width: min(670px, 41vw); }
+  .laptopScreen { left: 8.5%; right: 8.5%; top: 8.2%; bottom: 17%; }
 }
 
 @media (max-width: 1100px) {
-  .laptopWrap { width: min(620px, 55vw); }
-  .laptopScreen { left: 8.4%; right: 8.4%; top: 8.2%; bottom: 17%; }
+  .laptopWrap { width: min(610px, 54vw); }
+  .laptopScreen { left: 8.2%; right: 8.2%; top: 8%; bottom: 16.8%; }
 }
 
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr; text-align: center; padding: 80px 0 60px; }
-  .laptopWrap { width: min(520px, 90vw); transform: none; }
+  .laptopWrap { width: min(500px, 88vw); transform: none; }
   .laptopWrap:hover { transform: none; }
-  .laptopScreen { left: 7.8%; right: 7.8%; top: 8%; bottom: 16.5%; padding: 8px; gap: 8px; }
+  .laptopScreen { left: 7.5%; right: 7.5%; top: 7.8%; bottom: 16.2%; padding: 7px; gap: 7px; }
   .aiGrid { grid-template-columns: 1fr; }
 }
-
 /* CELEB SECTION */
 .celebSection{padding:90px 0 110px}
 .celebHeaderRow{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;margin-bottom:38px}
@@ -382,6 +368,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
