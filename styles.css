@@ -247,7 +247,24 @@ a{color:inherit;text-decoration:none}
   min-height:76px;
   cursor:pointer; /* ✅ tek satır burada dursun */
 }
+/* ✅ Laptop + cards hover hareketi (tıklamayı bozmaz) */
+.laptopWrap{
+  perspective: 900px;
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+.laptopWrap:hover{
+  transform: translateY(-6px) rotateX(3deg) rotateY(-3deg);
+}
 
+.aiCard{
+  will-change: transform;
+}
+.aiCard:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
 
 /* CELEB SECTION */
 .celebSection{padding:90px 0 110px}
@@ -383,6 +400,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
