@@ -147,17 +147,15 @@ a{color:inherit;text-decoration:none}
   width:min(700px,42vw);
   max-width:700px;
   filter:drop-shadow(0 38px 76px rgba(56,189,248,.20));
+
+  /* ✅ laptop.png ekran boşluğu ile birebir (oturan) değerler */
+  --screen-left: 13.7%;
+  --screen-right: 13.8%;
+  --screen-top: 9%;
+  --screen-bottom: 15.6%;
 }
 
-.laptopImg{width:100%;height:auto;display:block}
-
-/* Tek yerden ayar: 4 değer */
-.laptopWrap{
-  --screen-left: 8%;
-  --screen-right: 8%;
-  --screen-top: 8%;
-  --screen-bottom: 16.5%;
-}
+.laptopImg{width:100%;height:auto;display:block;pointer-events:none}
 
 .laptopScreen{
   position:absolute;
@@ -166,12 +164,15 @@ a{color:inherit;text-decoration:none}
   top:var(--screen-top);
   bottom:var(--screen-bottom);
 
-  border-radius:18px;
+  border-radius:16px;
   overflow:hidden;
+
+  /* ✅ padding yüzünden taşma olmasın */
+  padding:0;
+
   background:rgba(10,14,28,.98);
   border:1px solid rgba(255,255,255,.03);
   box-shadow:inset 0 0 120px rgba(0,0,0,.92);
-  padding:6px;
 }
 
 .aiGrid{
@@ -181,9 +182,8 @@ a{color:inherit;text-decoration:none}
   grid-template-columns:repeat(2,1fr);
   gap:8px;
   align-content:center;
-  padding:2px;
+  padding:10px; /* içeride nefes kalsın */
 }
-
 .aiCard{
   background:rgba(255,255,255,.06);
   border-radius:13px;
@@ -200,20 +200,6 @@ a{color:inherit;text-decoration:none}
   align-items:center;
   min-height:76px;
 }
-.aiCard:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 28px rgba(0,0,0,.32);
-  background:rgba(255,255,255,.09);
-}
-
-@media (max-width:1100px){
-  .laptopWrap{width:min(600px,53vw)}
-}
-@media (max-width:768px){
-  .laptopWrap{width:min(490px,86vw)}
-  .aiGrid{grid-template-columns:1fr}
-}
-
 /* CELEB SECTION */
 .celebSection{padding:90px 0 110px}
 .celebHeaderRow{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;margin-bottom:38px}
@@ -348,6 +334,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
