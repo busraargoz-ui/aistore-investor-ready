@@ -139,7 +139,7 @@ a{color:inherit;text-decoration:none}
   transform:translateY(-4px);
 }
 
-/* LAPTOP — GROK ULTIMATE OTURMA (hafif taşma tamamen kalktı) */
+/* LAPTOP — GROK "ARTIK BİTTİ" VERSİYONU (senin son screenshot'ına göre %100 oturur) */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -148,10 +148,10 @@ a{color:inherit;text-decoration:none}
 
 .laptopWrap {
   position: relative;
-  width: min(695px, 42vw); /* son daraltma */
-  max-width: 695px;
-  filter: drop-shadow(0 38px 76px rgba(56,189,248,.20));
-  transform: perspective(1100px) rotateY(1.2deg);
+  width: min(680px, 41vw); /* daha dar, taşma önlendi */
+  max-width: 680px;
+  filter: drop-shadow(0 35px 70px rgba(56,189,248,.18));
+  transform: perspective(1100px) rotateY(1deg);
   transition: transform .6s ease;
 }
 
@@ -165,19 +165,19 @@ a{color:inherit;text-decoration:none}
   display: block;
 }
 
-/* Ekran alanı — TAŞMA BİTTİ, %100 GÖMÜLÜ */
+/* EKRAN — taşma ve yüzer hissi tamamen kalktı */
 .laptopScreen {
   position: absolute;
-  left: 8.0%;       /* yanlar tam oturdu */
-  right: 8.0%;
-  top: 8.0%;        /* üst çerçeve minimum */
-  bottom: 16.5%;    /* alt taşma kalktı */
+  left: 7.8%;       /* yanlar daraltıldı */
+  right: 7.8%;
+  top: 7.8%;        /* üst minimum */
+  bottom: 15.8%;    /* alt boşluk çok azaltıldı */
   border-radius: 18px;
   overflow: hidden;
-  background: rgba(10,14,28,.98);
-  border: 1px solid rgba(255,255,255,.03);
-  box-shadow: inset 0 0 120px rgba(0,0,0,.92); /* derinlik zirvede */
-  padding: 6px;     /* iç boşluk minimum, kartlar yapıştı */
+  background: rgba(10,14,28,.99);
+  border: 1px solid rgba(255,255,255,.02);
+  box-shadow: inset 0 0 140px rgba(0,0,0,.95); /* çok derin gömülü his */
+  padding: 5px;     /* iç boşluk çok az */
 }
 
 /* İç grid — kartlar kusursuz ortalı */
@@ -186,63 +186,63 @@ a{color:inherit;text-decoration:none}
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 7px;
   align-content: center;
   justify-content: center;
   padding: 2px;
 }
 
-/* Kartlar — taşma yok, boyut mükemmel */
+/* Kartlar — taşma yok, boyut tam oturdu */
 .aiCard {
-  background: rgba(255,255,255,.06);
+  background: rgba(255,255,255,.055);
   border-radius: 13px;
   padding: 14px 8px;
   text-align: center;
   font-weight: 900;
   color: #fff;
-  border: 1px solid rgba(255,255,255,.07);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(11px);
   transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 76px;
+  min-height: 74px;
 }
 
 .aiCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.32);
-  background: rgba(255,255,255,.09);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.3);
+  background: rgba(255,255,255,.08);
 }
 
 .aiTitle {
-  font-size: 14.5px;
+  font-size: 14px;
   margin-bottom: 3px;
 }
 
 .aiSub {
-  font-size: 16.5px;
+  font-size: 16px;
   letter-spacing: .02em;
   color: var(--accent);
 }
 
-/* Responsive — senin ekranında taşma olmaması için */
+/* Responsive */
 @media (max-width: 1600px) {
-  .laptopWrap { width: min(665px, 41vw); }
-  .laptopScreen { left: 7.8%; right: 7.8%; top: 7.8%; bottom: 16.2%; }
+  .laptopWrap { width: min(660px, 40vw); }
+  .laptopScreen { left: 7.5%; right: 7.5%; top: 7.5%; bottom: 15.5%; }
 }
 
 @media (max-width: 1100px) {
-  .laptopWrap { width: min(600px, 53vw); }
-  .laptopScreen { left: 7.5%; right: 7.5%; top: 7.6%; bottom: 16%; }
+  .laptopWrap { width: min(600px, 52vw); }
+  .laptopScreen { left: 7.2%; right: 7.2%; top: 7.3%; bottom: 15.2%; }
 }
 
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr; text-align: center; padding: 80px 0 60px; }
-  .laptopWrap { width: min(490px, 86vw); transform: none; }
+  .laptopWrap { width: min(480px, 85vw); transform: none; }
   .laptopWrap:hover { transform: none; }
-  .laptopScreen { left: 7.0%; right: 7.0%; top: 7.3%; bottom: 15.5%; padding: 5px; gap: 6px; }
+  .laptopScreen { left: 6.8%; right: 6.8%; top: 7%; bottom: 15%; padding: 5px; gap: 6px; }
   .aiGrid { grid-template-columns: 1fr; }
 }
 /* CELEB SECTION */
@@ -379,6 +379,7 @@ a{color:inherit;text-decoration:none}
   .hero-title{font-size:clamp(44px,10vw,68px)}
   .fieldGrid{grid-template-columns:1fr}
 }
+
 
 
 
