@@ -21,16 +21,34 @@ app.post("/api/chat", async (req, res) => {
       return res.status(500).json({ error: "OPENAI_API_KEY is missing on server" });
     }
 
+    const expertName = expert?.name || "Expert AI";
+    const expertCategory = expert?.category || "General";
+    const expertDesc = expert?.description || "";
+
+    const instruction = (expert?.instruction || "").trim();
+    const disclaimer = (expert?.disclaimer || "").trim();
+    const signature = (expert?.signature || "").trim();
+
+    // ✅ Her zaman en sonda görünsün diye "mandatory ending"
+    const mandatoryEnding = [disclaimer, signature].filter(Boolean).join("\n");
+
     const system = `
 You are an Expert AI on AIStore.
-Expert name: ${expert?.name || "Expert AI"}
-Category: ${expert?.category || "General"}
-Description: ${expert?.description || ""}
+Expert name: ${expertName}
+Category: ${expertCategory}
+Description: ${expertDesc}
 Language: ${lang === "tr" ? "Turkish" : "English"}
+
+Expert Instruction (must follow):
+${instruction || "- (No custom instruction provided.)"}
+
 Rules:
 - Answer in the requested language.
 - Be helpful, structured, and concise.
 - If topic is medical/legal/financial, add a short caution and suggest consulting a professional.
+- Do NOT invent facts. If unsure, say so.
+- IMPORTANT: Your final output MUST end with the following lines exactly (if present):
+${mandatoryEnding ? mandatoryEnding : "(No mandatory ending)"}
 `.trim();
 
     const completion = await client.chat.completions.create({
@@ -42,7 +60,19 @@ Rules:
       ],
     });
 
-    const answer = completion.choices?.[0]?.message?.content?.trim() || "";
+    let answer = completion.choices?.[0]?.message?.content?.trim() || "";
+
+    // ✅ Model unutsa bile server garanti ekler (demo sağlamlığı)
+    if (mandatoryEnding) {
+      const norm = (s) => String(s || "").replace(/\s+/g, " ").trim().toLowerCase();
+      const hasDisclaimer = disclaimer ? norm(answer).includes(norm(disclaimer)) : true;
+      const hasSignature = signature ? norm(answer).includes(norm(signature)) : true;
+
+      if (!hasDisclaimer || !hasSignature) {
+        answer = (answer ? answer + "\n\n" : "") + mandatoryEnding;
+      }
+    }
+
     return res.json({ answer });
   } catch (err) {
     return res.status(500).json({ error: err?.message || "Server error" });
