@@ -62,21 +62,26 @@
             <textarea class="textarea" id="aiDesc" rows="4" placeholder="What does your AI do?"></textarea>
           </div>
 
-          <!-- ✅ Investor Demo Brain Builder (NEW) -->
+          <!-- ✅ Investor Demo: Expert Brain Controls -->
           <div style="grid-column: 1 / -1;">
-            <label class="label" for="aiInstruction">How should I answer? (Expert Instruction)</label>
-            <textarea class="textarea" id="aiInstruction" rows="4"
-              placeholder="e.g., I am a finance expert. Answer structured. Always end with disclaimer + signature."></textarea>
+            <label class="label" for="aiInstruction">Expert Instruction (controls tone, greeting, language, format)</label>
+            <textarea class="textarea" id="aiInstruction" rows="5"
+              placeholder="Example:
+You are answering on my behalf.
+Be extremely formal but kind.
+Sometimes greet in English, sometimes in German.
+If userName is provided, address the user by name.
+Always structure answers with bullets and short steps."></textarea>
           </div>
 
           <div>
-            <label class="label" for="aiSignature">Signature</label>
-            <input class="input" id="aiSignature" placeholder="e.g., — Büşra | AIStore Finance Expert" />
+            <label class="label" for="aiSignature">Signature (optional)</label>
+            <input class="input" id="aiSignature" placeholder="e.g., — Dr. X | AIStore Expert" />
           </div>
 
           <div>
-            <label class="label" for="aiDisclaimer">Mandatory closing line</label>
-            <input class="input" id="aiDisclaimer" placeholder="e.g., Bu bir yatırım tavsiyesi değildir." />
+            <label class="label" for="aiDisclaimer">Mandatory closing line (optional)</label>
+            <input class="input" id="aiDisclaimer" placeholder="e.g., This is not medical advice." />
           </div>
         </div>
 
@@ -110,7 +115,9 @@
         </div>
 
         <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;">
-          <input id="expertMsg" class="input" style="flex:1; min-width:260px;" placeholder="Type your question..." />
+          <input id="viewerName" class="input" style="flex:1; min-width:220px;"
+                 placeholder="Your name (optional) / Adın (opsiyonel)" />
+          <input id="expertMsg" class="input" style="flex:2; min-width:260px;" placeholder="Type your question..." />
           <button id="expertSend" class="cta primary" type="button" style="min-width:180px;">
             <span data-i18n="demo.send">Send</span>
           </button>
@@ -289,11 +296,12 @@
       }
 
       function initDemo(){
+        // ✅ Neutral defaults — investor can change everything via Expert Instruction
         const family = {
           name: "Life & Family Psychologist ΛI",
           category: "Life & Family",
           description: "Supportive, structured guidance for relationships, parenting, and daily wellbeing.",
-          instruction: "You are a supportive psychologist. Ask 1-2 clarifying questions if needed. Be practical, empathetic, and structured. Avoid diagnosis. End with the mandatory closing line and signature.",
+          instruction: "Answer on my behalf. Be supportive and structured. If userName is provided, you may address them by name. Greeting and tone are fully controlled by this instruction. Avoid diagnosis. Ask clarifying questions if needed.",
           disclaimer: "This is not a medical diagnosis. If you feel unsafe or symptoms are severe, seek professional help immediately.",
           signature: "— AIStore | Psychologist Expert"
         };
@@ -301,7 +309,7 @@
           name: "Finance Advisor ΛI",
           category: "Finance",
           description: "Practical budgeting, savings, and decision frameworks — with clear caveats.",
-          instruction: "You are a finance expert. Be structured (bullets + short steps). State assumptions. Give options and risks. Never promise returns. End with the mandatory closing line and signature.",
+          instruction: "Answer on my behalf as a finance expert. Tone, greeting, language choices are controlled by this instruction. If userName is provided, you may address them by name. Be structured (bullets + short steps). State assumptions. Never promise returns.",
           disclaimer: "Bu bir yatırım tavsiyesi değildir.",
           signature: "— AIStore | Finance Expert"
         };
@@ -344,11 +352,13 @@
 
         if(!CURRENT_EXPERT) CURRENT_EXPERT = expertFromForm();
 
+        const viewerName = (document.getElementById("viewerName")?.value || "").trim();
+
         try{
           const res = await fetch("/api/chat", {
             method:"POST",
             headers:{"Content-Type":"application/json"},
-            body: JSON.stringify({ message: text, expert: CURRENT_EXPERT, lang })
+            body: JSON.stringify({ message: text, expert: CURRENT_EXPERT, lang, userName: viewerName })
           });
 
           const data = await res.json().catch(()=> ({}));
