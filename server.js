@@ -13,7 +13,7 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post("/api/chat", async (req, res) => {
   try {
-    const { message, expert, lang } = req.body || {};
+    const { message, expert, lang, userName } = req.body || {};
     if (!message) return res.status(400).json({ error: "Missing message" });
 
     // ✅ ENV kontrol
@@ -29,7 +29,7 @@ app.post("/api/chat", async (req, res) => {
     const disclaimer = (expert?.disclaimer || "").trim();
     const signature = (expert?.signature || "").trim();
 
-    // ✅ Her zaman en sonda görünsün diye "mandatory ending"
+    // ✅ Only enforce ending if provided
     const mandatoryEnding = [disclaimer, signature].filter(Boolean).join("\n");
 
     const system = `
@@ -39,16 +39,20 @@ Category: ${expertCategory}
 Description: ${expertDesc}
 Language: ${lang === "tr" ? "Turkish" : "English"}
 
+User name (if provided): ${userName ? userName : "(not provided)"}
+
 Expert Instruction (must follow):
 ${instruction || "- (No custom instruction provided.)"}
 
 Rules:
-- Answer in the requested language.
+- Follow the Expert Instruction exactly (tone, greeting, language choices, structure).
+- Answer in the requested language, unless the instruction explicitly overrides it.
+- If userName is provided, you may address the user by name ONLY if instruction allows/asks it.
 - Be helpful, structured, and concise.
-- If topic is medical/legal/financial, add a short caution and suggest consulting a professional.
+- If topic is medical/legal/financial, add a short caution and suggest consulting a professional (unless instruction says otherwise).
 - Do NOT invent facts. If unsure, say so.
-- IMPORTANT: Your final output MUST end with the following lines exactly (if present):
-${mandatoryEnding ? mandatoryEnding : "(No mandatory ending)"}
+- If Mandatory closing line and/or Signature are provided, your final output MUST end with them exactly.
+${mandatoryEnding ? `- Mandatory ending:\n${mandatoryEnding}` : "- No mandatory ending provided."}
 `.trim();
 
     const completion = await client.chat.completions.create({
@@ -62,7 +66,7 @@ ${mandatoryEnding ? mandatoryEnding : "(No mandatory ending)"}
 
     let answer = completion.choices?.[0]?.message?.content?.trim() || "";
 
-    // ✅ Model unutsa bile server garanti ekler (demo sağlamlığı)
+    // ✅ Server-side guarantee only when provided (demo reliability)
     if (mandatoryEnding) {
       const norm = (s) => String(s || "").replace(/\s+/g, " ").trim().toLowerCase();
       const hasDisclaimer = disclaimer ? norm(answer).includes(norm(disclaimer)) : true;
