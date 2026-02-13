@@ -5,7 +5,7 @@ const OpenAI = require("openai");
 const app = express();
 app.use(express.json());
 
-// ✅ Static site: index.html, pricing.html, styles.css ve /assets/* burada servis edilir
+// ✅ Static site
 app.use(express.static(path.join(__dirname)));
 
 // ✅ OpenAI client
@@ -16,7 +16,6 @@ app.post("/api/chat", async (req, res) => {
     const { message, expert, lang, userName } = req.body || {};
     if (!message) return res.status(400).json({ error: "Missing message" });
 
-    // ✅ ENV kontrol
     if (!process.env.OPENAI_API_KEY) {
       return res.status(500).json({ error: "OPENAI_API_KEY is missing on server" });
     }
@@ -31,6 +30,14 @@ app.post("/api/chat", async (req, res) => {
 
     // ✅ Only enforce ending if provided
     const mandatoryEnding = [disclaimer, signature].filter(Boolean).join("\n");
+
+    // ✅ If expert instruction suggests greeting, enforce 1-line greeting at start (investor demo stability)
+    const wantsGreeting = /selam|selamla|merhaba|hoş\s*geldin|hos\s*geldin|greet|greeting|welcome|hello|hi|willkommen|grüß|gruss/i
+      .test(instruction);
+
+    const greetingRule = wantsGreeting
+      ? `- Start the answer with EXACTLY 1 short greeting sentence that matches the Expert Instruction. If userName is provided and instruction allows, include the name in the greeting.`
+      : `- Greeting is optional unless Expert Instruction requires it.`;
 
     const system = `
 You are an Expert AI on AIStore.
@@ -47,7 +54,7 @@ ${instruction || "- (No custom instruction provided.)"}
 Rules:
 - Follow the Expert Instruction exactly (tone, greeting, language choices, structure).
 - Answer in the requested language, unless the instruction explicitly overrides it.
-- If userName is provided, you may address the user by name ONLY if instruction allows/asks it.
+${greetingRule}
 - Be helpful, structured, and concise.
 - If topic is medical/legal/financial, add a short caution and suggest consulting a professional (unless instruction says otherwise).
 - Do NOT invent facts. If unsure, say so.
@@ -66,7 +73,7 @@ ${mandatoryEnding ? `- Mandatory ending:\n${mandatoryEnding}` : "- No mandatory 
 
     let answer = completion.choices?.[0]?.message?.content?.trim() || "";
 
-    // ✅ Server-side guarantee only when provided (demo reliability)
+    // ✅ Guarantee ending only when provided
     if (mandatoryEnding) {
       const norm = (s) => String(s || "").replace(/\s+/g, " ").trim().toLowerCase();
       const hasDisclaimer = disclaimer ? norm(answer).includes(norm(disclaimer)) : true;
@@ -83,6 +90,5 @@ ${mandatoryEnding ? `- Mandatory ending:\n${mandatoryEnding}` : "- No mandatory 
   }
 });
 
-// ✅ Render port
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Server running on", PORT));
