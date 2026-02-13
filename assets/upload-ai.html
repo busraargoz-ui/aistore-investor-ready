@@ -61,6 +61,23 @@
             <label class="label" for="aiDesc" data-i18n="upload.desc">Short Description</label>
             <textarea class="textarea" id="aiDesc" rows="4" placeholder="What does your AI do?"></textarea>
           </div>
+
+          <!-- ✅ Investor Demo Brain Builder (NEW) -->
+          <div style="grid-column: 1 / -1;">
+            <label class="label" for="aiInstruction">How should I answer? (Expert Instruction)</label>
+            <textarea class="textarea" id="aiInstruction" rows="4"
+              placeholder="e.g., I am a finance expert. Answer structured. Always end with disclaimer + signature."></textarea>
+          </div>
+
+          <div>
+            <label class="label" for="aiSignature">Signature</label>
+            <input class="input" id="aiSignature" placeholder="e.g., — Büşra | AIStore Finance Expert" />
+          </div>
+
+          <div>
+            <label class="label" for="aiDisclaimer">Mandatory closing line</label>
+            <input class="input" id="aiDisclaimer" placeholder="e.g., Bu bir yatırım tavsiyesi değildir." />
+          </div>
         </div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -253,13 +270,21 @@
         const name = (document.getElementById("aiName")?.value || "").trim();
         const category = (document.getElementById("aiCategory")?.value || "").trim();
         const desc = (document.getElementById("aiDesc")?.value || "").trim();
+
+        const instruction = (document.getElementById("aiInstruction")?.value || "").trim();
+        const signature = (document.getElementById("aiSignature")?.value || "").trim();
+        const disclaimer = (document.getElementById("aiDisclaimer")?.value || "").trim();
+
         const lang = getLang();
         return {
           name: name || (lang === "tr" ? "Kariyer Koçu ΛI" : "Career Coach ΛI"),
           category: category || (lang === "tr" ? "Kariyer" : "Career"),
           description: desc || (lang === "tr"
             ? "Net hedefler, adım adım plan ve güçlü motivasyon."
-            : "Clear goals, step-by-step plan, strong motivation.")
+            : "Clear goals, step-by-step plan, strong motivation."),
+          instruction,
+          signature,
+          disclaimer
         };
       }
 
@@ -267,12 +292,18 @@
         const family = {
           name: "Life & Family Psychologist ΛI",
           category: "Life & Family",
-          description: "Supportive, structured guidance for relationships, parenting, and daily wellbeing."
+          description: "Supportive, structured guidance for relationships, parenting, and daily wellbeing.",
+          instruction: "You are a supportive psychologist. Ask 1-2 clarifying questions if needed. Be practical, empathetic, and structured. Avoid diagnosis. End with the mandatory closing line and signature.",
+          disclaimer: "This is not a medical diagnosis. If you feel unsafe or symptoms are severe, seek professional help immediately.",
+          signature: "— AIStore | Psychologist Expert"
         };
         const finance = {
           name: "Finance Advisor ΛI",
           category: "Finance",
-          description: "Practical budgeting, savings, and decision frameworks — with clear caveats."
+          description: "Practical budgeting, savings, and decision frameworks — with clear caveats.",
+          instruction: "You are a finance expert. Be structured (bullets + short steps). State assumptions. Give options and risks. Never promise returns. End with the mandatory closing line and signature.",
+          disclaimer: "Bu bir yatırım tavsiyesi değildir.",
+          signature: "— AIStore | Finance Expert"
         };
 
         document.getElementById("personaFamily")?.addEventListener("click", ()=>setSelectedExpert(family));
